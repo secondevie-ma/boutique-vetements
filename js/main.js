@@ -4,8 +4,8 @@
    ========================================================================== */
 
 /* Numéro WhatsApp de la boutique, au format international SANS « + » ni espaces.
-   Exemple : 06 40 60 36 18 (Maroc) → "212640603618" */
-const WHATSAPP_NUMBER = "212640603618";
+   Exemple : 07 18 33 65 22 (Maroc) → "212718336522" */
+const WHATSAPP_NUMBER = "212718336522";
 
 const DEFAULT_LANG = "fr";
 const STORAGE_KEY = "secondevie-lang";
