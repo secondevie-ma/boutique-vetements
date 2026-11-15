@@ -19,14 +19,21 @@ document.addEventListener("DOMContentLoaded", () => {
   setContactWhatsapp();
 });
 
-/** Lien WhatsApp du footer, construit à partir de WHATSAPP_NUMBER (ex. « +212 6 40 60 36 18 »). */
+/**
+ * Contact du footer, construit à partir de WHATSAPP_NUMBER :
+ * bouton WhatsApp + lien d'appel affichant le numéro au format marocain (07 18 33 65 22).
+ */
 function setContactWhatsapp() {
-  const link = document.getElementById("contact-whatsapp");
-  if (!link) return;
   const n = WHATSAPP_NUMBER;
-  const pairs = n.slice(4).match(/.{1,2}/g).join(" ");
-  link.href = `https://wa.me/${n}`;
-  link.textContent = `+${n.slice(0, 3)} ${n.slice(3, 4)} ${pairs}`;
+  const local = `0${n.slice(3)}`.match(/.{1,2}/g).join(" ");
+
+  const whatsapp = document.getElementById("contact-whatsapp");
+  if (whatsapp) whatsapp.href = `https://wa.me/${n}`;
+
+  const phone = document.getElementById("contact-phone");
+  const phoneNumber = document.getElementById("contact-phone-number");
+  if (phone) phone.href = `tel:+${n}`;
+  if (phoneNumber) phoneNumber.textContent = local;
 }
 
 /** Renvoie la traduction d'une clé dans la langue courante. */

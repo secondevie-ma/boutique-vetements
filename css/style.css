@@ -409,8 +409,8 @@ ul {
 
 .footer__inner {
   display: grid;
-  gap: 36px;
-  padding-bottom: 40px;
+  gap: 40px;
+  padding-bottom: 48px;
 }
 
 .footer__text {
@@ -420,7 +420,7 @@ ul {
 }
 
 .footer__title {
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -428,23 +428,123 @@ ul {
   color: #fff;
 }
 
-.footer__list {
+.footer__icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+/* Liens rapides */
+.footer__links {
   display: grid;
-  gap: 6px;
+  gap: 10px;
+}
+
+.footer__link {
+  position: relative;
   font-size: 0.95rem;
+  transition: color var(--transition);
 }
 
-.footer__list a:hover {
+.footer__link::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transition: width var(--transition);
+}
+
+.footer__link:hover {
   color: #fff;
-  text-decoration: underline;
 }
 
+.footer__link:hover::after {
+  width: 100%;
+}
+
+/* Boutons de contact */
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition), transform var(--transition);
+}
+
+.footer__btn:hover {
+  transform: translateY(-2px);
+}
+
+.footer__btn--whatsapp {
+  color: #fff;
+  background-color: #128c4a;
+}
+
+.footer__btn--whatsapp:hover {
+  background-color: #0e6f3a;
+}
+
+.footer__btn--phone {
+  color: #fff;
+  border: 1px solid #4a433d;
+  letter-spacing: 0.04em;
+}
+
+.footer__btn--phone:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* Barre du bas */
 .footer__bottom {
+  border-top: 1px solid #36312d;
+}
+
+.footer__bottom-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   padding-top: 20px;
   padding-bottom: 24px;
   font-size: 0.85rem;
   color: #8f877e;
-  border-top: 1px solid #36312d;
+}
+
+.footer__top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  color: #d8d1c8;
+  transition: color var(--transition);
+}
+
+.footer__top:hover {
+  color: var(--color-accent);
+}
+
+.footer__top .footer__icon {
+  transition: transform var(--transition);
+}
+
+.footer__top:hover .footer__icon {
+  transform: translateY(-3px);
 }
 
 /* 8. Responsive
@@ -507,7 +607,8 @@ ul {
   }
 
   .footer__inner {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.6fr 1fr 1.2fr;
+    gap: 48px;
   }
 }
 
