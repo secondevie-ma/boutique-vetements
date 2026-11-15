@@ -1,0 +1,549 @@
+/* ==========================================================================
+   Seconde Vie — Feuille de style principale
+   Sommaire :
+   1. Variables
+   2. Base / reset
+   3. Utilitaires (container, bouton, titres)
+   4. En-tête & navigation
+   5. Hero
+   6. Sélection de produits
+   7. Footer
+   8. Responsive
+   ========================================================================== */
+
+/* 1. Variables
+   ========================================================================== */
+:root {
+  --color-bg: #f7f3ee;          /* crème */
+  --color-surface: #ffffff;
+  --color-text: #1f1c1a;        /* encre */
+  --color-muted: #6f6760;
+  --color-accent: #b5563a;      /* terracotta */
+  --color-accent-dark: #974329;
+  --color-border: #e6dfd6;
+  --color-dark: #1f1c1a;
+
+  /* Les polices arabe et tifinagh prennent le relais pour leurs alphabets */
+  --font-heading: "Fraunces", "Noto Kufi Arabic", "Noto Sans Tifinagh", Georgia, serif;
+  --font-body: "Inter", "Noto Kufi Arabic", "Noto Sans Tifinagh", system-ui, -apple-system, sans-serif;
+
+  --radius: 12px;
+  --header-height: 68px;
+  --container: 1180px;
+  --transition: 0.25s ease;
+}
+
+/* 2. Base / reset
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* 3. Utilitaires
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #fff;
+  background-color: var(--color-accent);
+  border-radius: 999px;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.section-head {
+  margin-bottom: 36px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  margin-top: 8px;
+  color: var(--color-muted);
+}
+
+/* 4. En-tête & navigation
+   ========================================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(247, 243, 238, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: var(--header-height);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-inline-start: auto;
+}
+
+/* Sélecteur de langue */
+.lang-select {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 36px;
+  padding: 0 32px 0 14px;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' stroke='%236f6760' stroke-width='1.5'%3E%3Cpath d='M1 1l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+
+.lang-select:hover {
+  border-color: var(--color-muted);
+}
+
+[dir="rtl"] .lang-select {
+  padding: 0 14px 0 32px;
+  background-position: left 12px center;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.logo span {
+  color: var(--color-accent);
+  font-style: italic;
+}
+
+.logo--light {
+  color: #fff;
+}
+
+/* Bouton burger (mobile) */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle__bar {
+  display: block;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Menu mobile : panneau déroulant sous l'en-tête */
+.nav {
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition);
+}
+
+.nav.is-open {
+  max-height: 320px;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 20px 20px;
+}
+
+.nav__link {
+  display: block;
+  padding: 12px 0;
+  font-weight: 500;
+  border-bottom: 1px solid var(--color-border);
+  transition: color var(--transition);
+}
+
+.nav__list li:last-child .nav__link {
+  border-bottom: none;
+}
+
+.nav__link:hover,
+.nav__link--active {
+  color: var(--color-accent);
+}
+
+/* 5. Hero
+   ========================================================================== */
+.hero {
+  padding: 48px 0 64px;
+}
+
+.hero__inner {
+  display: grid;
+  gap: 40px;
+}
+
+.hero__eyebrow {
+  margin-bottom: 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.hero__title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(2.2rem, 7vw, 3.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.hero__title em {
+  font-weight: 400;
+  color: var(--color-accent);
+}
+
+.hero__text {
+  max-width: 34rem;
+  margin: 20px 0 32px;
+  font-size: 1.05rem;
+  color: var(--color-muted);
+}
+
+.hero__img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background-color: var(--color-border); /* visible pendant le chargement */
+}
+
+/* 6. Sélection de produits
+   ========================================================================== */
+.products {
+  padding: 64px 0 80px;
+  background-color: var(--color-surface);
+}
+
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 16px;
+}
+
+.product-card__media {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background-color: var(--color-border);
+}
+
+.product-card__media img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-card__media img {
+  transform: scale(1.04);
+}
+
+.product-card__body {
+  padding-top: 12px;
+}
+
+.product-card__name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.product-card__meta {
+  margin-top: 2px;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.product-card__price {
+  margin-top: 6px;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* Bouton de commande WhatsApp */
+.btn-order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  color: #fff;
+  background-color: #128c4a; /* vert WhatsApp foncé, lisible avec du texte blanc */
+  border-radius: 999px;
+  transition: background-color var(--transition);
+}
+
+.btn-order:hover {
+  background-color: #0e6f3a;
+}
+
+.btn-order__icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+/* 7. Footer
+   ========================================================================== */
+.footer {
+  padding-top: 56px;
+  color: #d8d1c8;
+  background-color: var(--color-dark);
+}
+
+.footer__inner {
+  display: grid;
+  gap: 36px;
+  padding-bottom: 40px;
+}
+
+.footer__text {
+  max-width: 30rem;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.footer__title {
+  margin-bottom: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.footer__list {
+  display: grid;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+
+.footer__list a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer__bottom {
+  padding-top: 20px;
+  padding-bottom: 24px;
+  font-size: 0.85rem;
+  color: #8f877e;
+  border-top: 1px solid #36312d;
+}
+
+/* 8. Responsive
+   ========================================================================== */
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 32px;
+  }
+
+  .header__actions {
+    margin-inline-start: 0;
+  }
+
+  /* Navigation horizontale : on masque le burger */
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    margin-inline-start: auto;
+    max-height: none;
+    overflow: visible;
+    background: none;
+    border: none;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    gap: 32px;
+    padding: 0;
+  }
+
+  .nav__link {
+    padding: 4px 0;
+    border-bottom: none;
+  }
+
+  .hero {
+    padding: 72px 0 96px;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1.05fr 1fr;
+    align-items: center;
+    gap: 56px;
+  }
+
+  .hero__img {
+    aspect-ratio: 4 / 5;
+  }
+
+  .products__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 28px;
+  }
+
+  .product-card__name {
+    font-size: 1.05rem;
+  }
+
+  .footer__inner {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Ajustements par langue
+   ========================================================================== */
+/* L'arabe et le tifinagh n'ont pas d'italique ni de majuscules,
+   et l'espacement des lettres casse les liaisons de l'arabe. */
+:lang(ar) .hero__title em,
+:lang(zgh) .hero__title em {
+  font-style: normal;
+}
+
+:lang(ar) .hero__eyebrow,
+:lang(ar) .footer__title {
+  letter-spacing: 0;
+}
+
+:lang(ar) .hero__title,
+:lang(ar) .section-title {
+  line-height: 1.4;
+}
+
+:lang(ar) body,
+:lang(ar) .hero__text {
+  line-height: 1.8;
+}
+
+/* Respect des préférences d'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

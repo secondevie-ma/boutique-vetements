@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Friperie en ligne : vêtements vintage et seconde main à petits prix pour les étudiants.">
+  <title>Seconde Vie — Friperie vintage pour étudiants</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=Noto+Kufi+Arabic:wght@400;500;600&family=Noto+Sans+Tifinagh&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== EN-TÊTE / NAVIGATION ========== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#accueil" class="logo">Seconde<span>Vie</span></a>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale" data-i18n-aria-label="nav.label">
+        <ul class="nav__list">
+          <li><a href="#accueil" class="nav__link nav__link--active" data-i18n="nav.home">Accueil</a></li>
+          <li><a href="#boutique" class="nav__link" data-i18n="nav.shop">Boutique</a></li>
+          <li><a href="#a-propos" class="nav__link" data-i18n="nav.about">À propos</a></li>
+          <li><a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <label for="lang-select" class="visually-hidden" data-i18n="lang.label">Langue</label>
+        <select id="lang-select" class="lang-select">
+          <option value="fr" lang="fr">Français</option>
+          <option value="en" lang="en">English</option>
+          <option value="ar" lang="ar">العربية</option>
+          <option value="zgh" lang="zgh">ⵜⴰⵎⴰⵣⵉⵖⵜ</option>
+        </select>
+
+        <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="accueil">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow" data-i18n="hero.eyebrow">Friperie vintage &amp; seconde main</p>
+          <h1 class="hero__title">
+            <span data-i18n="hero.title">Du style qui a une histoire,</span>
+            <em data-i18n="hero.titleEm">à prix étudiant.</em>
+          </h1>
+          <p class="hero__text" data-i18n="hero.text">
+            Des pièces uniques sélectionnées une à une : vestes, jeans, pulls et basiques
+            de qualité, pour s'habiller sans vider son compte.
+          </p>
+          <a href="#boutique" class="btn" data-i18n="hero.cta">Découvrir la boutique</a>
+        </div>
+
+        <div class="hero__media">
+          <img
+            src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=1000&q=80"
+            alt="T-shirts verts suspendus sur des cintres en bois"
+            data-i18n-alt="hero.alt"
+            class="hero__img"
+            width="1000" height="667">
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SÉLECTION DE VÊTEMENTS ========== -->
+    <section class="products" id="boutique">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="products.title">Nouveautés de la semaine</h2>
+          <p class="section-subtitle" data-i18n="products.subtitle">Chaque pièce est unique : quand elle est partie, elle est partie.</p>
+        </div>
+
+        <ul class="products__grid">
+          <li class="product-card">
+            <div class="product-card__media">
+              <img src="images/produits/chemise-rayee-bleue.jpg"
+                   alt="Chemise à rayures bleues et blanches sur un cintre" data-i18n-alt="p14.alt" loading="lazy" width="1200" height="1300">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name" data-i18n="p14.name">Chemise à rayures bleues American Eagle</h3>
+              <p class="product-card__meta" data-i18n="p14.meta">Taille L · Très bon état</p>
+              <p class="product-card__price">40DH</p>
+              <a href="#" class="btn-order" target="_blank" rel="noopener">
+                <svg class="btn-order__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <span data-i18n="order.cta">Commander sur WhatsApp</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="product-card">
+            <div class="product-card__media">
+              <img src="images/produits/gilet-maille-taupe.jpg"
+                   alt="Gilet sans manches en maille taupe sur un cintre" data-i18n-alt="p10.alt" loading="lazy" width="1200" height="1300">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name" data-i18n="p10.name">Gilet sans manches en maille taupe</h3>
+              <p class="product-card__meta" data-i18n="p10.meta">Taille L · Très bon état</p>
+              <p class="product-card__price">120 DH</p>
+              <a href="#" class="btn-order" target="_blank" rel="noopener">
+                <svg class="btn-order__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <span data-i18n="order.cta">Commander sur WhatsApp</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="product-card">
+            <div class="product-card__media">
+              <img src="images/produits/sweat-zippe-gris.jpg"
+                   alt="Sweat zippé à capuche gris chiné sur un cintre" data-i18n-alt="p11.alt" loading="lazy" width="1200" height="1300">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name" data-i18n="p11.name">Sweat zippé à capuche gris</h3>
+              <p class="product-card__meta" data-i18n="p11.meta">Taille M · Très bon état</p>
+              <p class="product-card__price">150 DH</p>
+              <a href="#" class="btn-order" target="_blank" rel="noopener">
+                <svg class="btn-order__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <span data-i18n="order.cta">Commander sur WhatsApp</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="product-card">
+            <div class="product-card__media">
+              <img src="images/produits/sweat-col-rond-noir.jpg"
+                   alt="Sweat col rond noir sur un cintre" data-i18n-alt="p12.alt" loading="lazy" width="1200" height="1300">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name" data-i18n="p12.name">Sweat col rond noir</h3>
+              <p class="product-card__meta" data-i18n="p12.meta">Taille L · Comme neuf</p>
+              <p class="product-card__price">100 DH</p>
+              <a href="#" class="btn-order" target="_blank" rel="noopener">
+                <svg class="btn-order__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <span data-i18n="order.cta">Commander sur WhatsApp</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="product-card">
+            <div class="product-card__media">
+              <img src="images/produits/pull-camionneur-noir.jpg"
+                   alt="Pull noir en grosse maille avec col zippé sur un cintre" data-i18n-alt="p13.alt" loading="lazy" width="1200" height="1300">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name" data-i18n="p13.name">Pull camionneur zippé noir</h3>
+              <p class="product-card__meta" data-i18n="p13.meta">Taille M · Très bon état</p>
+              <p class="product-card__price">150 DH</p>
+              <a href="#" class="btn-order" target="_blank" rel="noopener">
+                <svg class="btn-order__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <span data-i18n="order.cta">Commander sur WhatsApp</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="product-card">
+            <div class="product-card__media">
+              <img src="images/produits/veste-cuir-marron.jpg"
+                   alt="Veste en cuir marron sur un cintre" data-i18n-alt="p7.alt" loading="lazy" width="1200" height="1300">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name" data-i18n="p7.name">Veste en cuir marron vintage</h3>
+              <p class="product-card__meta" data-i18n="p7.meta">Taille L · Très bon état</p>
+              <p class="product-card__price">250 DH</p>
+              <a href="#" class="btn-order" target="_blank" rel="noopener">
+                <svg class="btn-order__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <span data-i18n="order.cta">Commander sur WhatsApp</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="product-card">
+            <div class="product-card__media">
+              <img src="images/produits/doudoune-bleu-marine.jpg"
+                   alt="Doudoune bleu marine à capuche sur un cintre" data-i18n-alt="p8.alt" loading="lazy" width="1200" height="1300">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name" data-i18n="p8.name">Doudoune bleu marine à capuche</h3>
+              <p class="product-card__meta" data-i18n="p8.meta">Taille M · Comme neuf</p>
+              <p class="product-card__price">200 DH</p>
+              <a href="#" class="btn-order" target="_blank" rel="noopener">
+                <svg class="btn-order__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <span data-i18n="order.cta">Commander sur WhatsApp</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="product-card">
+            <div class="product-card__media">
+              <img src="images/produits/maillot-portugal.jpg"
+                   alt="Maillot de football rouge du Portugal, numéro 7" data-i18n-alt="p9.alt" loading="lazy" width="1200" height="1300">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name" data-i18n="p9.name">Maillot de foot Portugal n°7</h3>
+              <p class="product-card__meta" data-i18n="p9.meta">Taille M · Bon état</p>
+              <p class="product-card__price">100 DH</p>
+              <a href="#" class="btn-order" target="_blank" rel="noopener">
+                <svg class="btn-order__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <span data-i18n="order.cta">Commander sur WhatsApp</span>
+              </a>
+            </div>
+          </li>
+
+          <!-- <li class="product-card">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&q=80"
+                   alt="Veste perfecto en cuir noir" data-i18n-alt="p1.alt" loading="lazy" width="600" height="750">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name" data-i18n="p1.name">Perfecto en cuir noir</h3>
+              <p class="product-card__meta" data-i18n="p1.meta">Taille M · Très bon état</p>
+              <p class="product-card__price">450 DH</p>
+              <a href="#" class="btn-order" target="_blank" rel="noopener">
+                <svg class="btn-order__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <span data-i18n="order.cta">Commander sur WhatsApp</span>
+              </a>
+            </div>
+          </li> -->
+
+          <!-- <li class="product-card">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80"
+                   alt="Bomber camel tenu sur un cintre" data-i18n-alt="p2.alt" loading="lazy" width="600" height="750">
+            </div> -->
+            <!-- <div class="product-card__body">
+              <h3 class="product-card__name" data-i18n="p2.name">Bomber camel</h3>
+              <p class="product-card__meta" data-i18n="p2.meta">Taille L · Bon état</p>
+              <p class="product-card__price">300 DH</p>
+              <a href="#" class="btn-order" target="_blank" rel="noopener">
+                <svg class="btn-order__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <span data-i18n="order.cta">Commander sur WhatsApp</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="product-card">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80"
+                   alt="Trois jeans pliés, du bleu clair au noir" data-i18n-alt="p3.alt" loading="lazy" width="600" height="750">
+            </div> -->
+            <!-- <div class="product-card__body">
+              <h3 class="product-card__name" data-i18n="p3.name">Jean droit vintage</h3>
+              <p class="product-card__meta" data-i18n="p3.meta">W30 L32 · Très bon état</p>
+              <p class="product-card__price">250 DH</p>
+              <a href="#" class="btn-order" target="_blank" rel="noopener">
+                <svg class="btn-order__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <span data-i18n="order.cta">Commander sur WhatsApp</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="product-card">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&q=80"
+                   alt="Pull en maille gris avec bonnet orange et jean" data-i18n-alt="p4.alt" loading="lazy" width="600" height="750">
+            </div> -->
+            <!-- <div class="product-card__body">
+              <h3 class="product-card__name" data-i18n="p4.name">Pull en maille gris</h3>
+              <p class="product-card__meta" data-i18n="p4.meta">Taille S · Comme neuf</p>
+              <p class="product-card__price">200 DH</p>
+              <a href="#" class="btn-order" target="_blank" rel="noopener">
+                <svg class="btn-order__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <span data-i18n="order.cta">Commander sur WhatsApp</span>
+              </a>
+            </div>
+          </li> -->
+
+          <!-- <li class="product-card">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=600&q=80"
+                   alt="Marinière rayée rouge et blanche avec chemise et jean" data-i18n-alt="p5.alt" loading="lazy" width="600" height="750">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name" data-i18n="p5.name">Marinière rayée</h3>
+              <p class="product-card__meta" data-i18n="p5.meta">Taille M · Bon état</p>
+              <p class="product-card__price">150 DH</p>
+              <a href="#" class="btn-order" target="_blank" rel="noopener">
+                <svg class="btn-order__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <span data-i18n="order.cta">Commander sur WhatsApp</span>
+              </a>
+            </div>
+          </li> -->
+
+          <!-- <li class="product-card">
+            <div class="product-card__media">
+              <img src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600&q=80"
+                   alt="T-shirts noirs imprimés sur un portant" data-i18n-alt="p6.alt" loading="lazy" width="600" height="750">
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name" data-i18n="p6.name">T-shirt graphique noir</h3>
+              <p class="product-card__meta" data-i18n="p6.meta">Taille L · Très bon état</p>
+              <p class="product-card__price">100 DH</p>
+              <a href="#" class="btn-order" target="_blank" rel="noopener">
+                <svg class="btn-order__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <span data-i18n="order.cta">Commander sur WhatsApp</span>
+              </a>
+            </div>
+          </li> -->
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__col" id="a-propos">
+        <a href="#accueil" class="logo logo--light">Seconde<span>Vie</span></a>
+        <p class="footer__text" data-i18n="footer.about">
+          Une friperie en ligne pensée pour les étudiants : des vêtements de qualité,
+          une seconde vie pour chaque pièce.
+        </p>
+      </div>
+
+      <div class="footer__col" id="contact">
+        <h2 class="footer__title" data-i18n="footer.contact">Contact</h2>
+        <ul class="footer__list">
+          <li><a href="mailto:Ahmed@gmail.com">Ahmed@gmail.com</a></li>
+          <li data-i18n="footer.hours">Du lundi au vendredi, 9h – 18h</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer__bottom container">
+      © <span id="year"></span> Seconde Vie. <span data-i18n="footer.rights">Tous droits réservés.</span>
+    </p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
