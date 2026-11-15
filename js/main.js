@@ -16,7 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
   initLanguage();
   initMobileNav();
   setFooterYear();
+  setContactWhatsapp();
 });
+
+/** Lien WhatsApp du footer, construit à partir de WHATSAPP_NUMBER (ex. « +212 6 40 60 36 18 »). */
+function setContactWhatsapp() {
+  const link = document.getElementById("contact-whatsapp");
+  if (!link) return;
+  const n = WHATSAPP_NUMBER;
+  const pairs = n.slice(4).match(/.{1,2}/g).join(" ");
+  link.href = `https://wa.me/${n}`;
+  link.textContent = `+${n.slice(0, 3)} ${n.slice(3, 4)} ${pairs}`;
+}
 
 /** Renvoie la traduction d'une clé dans la langue courante. */
 function t(key) {
